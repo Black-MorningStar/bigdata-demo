@@ -19,6 +19,7 @@
     <!-->子项目集合<-->
     <modules>
         <module>kafka</module>
+        <module>mongo</module>
     </modules>
 
     <!-->参数配置<-->
@@ -59,6 +60,11 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>33.2.1-jre</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>2.0.32</version>
         </dependency>
     </dependencies>
 

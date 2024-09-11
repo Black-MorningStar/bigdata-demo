@@ -48,9 +48,9 @@ public class ConsumerOne implements InitializingBean {
                     for (ConsumerRecord<String, String> record : recordList) {
                         System.out.println("consumerOne消费到消息. Key:"+record.key() + ",Value:" + record.value() + ",Offset:" + record.offset());
                         //按照每条消息粒度提交偏移量
-                        Map<TopicPartition, OffsetAndMetadata> map = new HashMap<>();
+                        /*Map<TopicPartition, OffsetAndMetadata> map = new HashMap<>();
                         map.put(partition,new OffsetAndMetadata(record.offset()));
-                        kafkaConsumer.commitSync(map);
+                        kafkaConsumer.commitSync(map);*/
                     }
                     //按照单个分区粒度提交偏移量
                     /*Map<TopicPartition, OffsetAndMetadata> map = new HashMap<>();
@@ -58,7 +58,7 @@ public class ConsumerOne implements InitializingBean {
                     kafkaConsumer.commitSync(map);*/
                 }
                 //按照poll一批的粒度提交偏移量
-                //kafkaConsumer.commitSync();
+                kafkaConsumer.commitSync();
             }
         });
     }
