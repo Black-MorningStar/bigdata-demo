@@ -28,6 +28,7 @@ public class MongoController {
     @Autowired
     private MongoDatabase mongoDatabase;
 
+
     @PostMapping("/insertOne")
     public void insertOne() {
         MongoCollection<User> collection = mongoDatabase.getCollection("user", User.class);
